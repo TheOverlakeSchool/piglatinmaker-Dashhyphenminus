@@ -6,20 +6,34 @@ fun main() {
     // UNTRANSLATED: We'll use readline later to get the data.
 
     // Ask the user for a word
-    println("enter your word here")
+    println("Enter your sentence here:")
 
     // Declare a String named enteredTerm and initialize it to the next word
     // read in from getData
-    var enteredTerm = readlnOrNull()
+    val enteredTerm = readlnOrNull()
+
+    var sentence = "$enteredTerm "
+
 
     // Clear out the buffer by calling nextLine on getData. UNTRANSLATED.
 
     // Declare a String with an identifier convertedTerm, initialized to an empty String
-    var convertedTerm = ""
+    val convertedTerms = ArrayList<String>()
+
+    while (sentence.indexOf(' ') !in -1..0) {
+        val word = sentence.substring(0, sentence.indexOf(' '))
+        val firstLetter = word.substring(0,1)
+        sentence = sentence.substring(sentence.indexOf(' ') + 1)
+
+        convertedTerms.add(when (firstLetter) {
+                "a", "e", "i", "o", "u" -> word + "yay"
+                else -> word.substring(1) + word.substring(0, 1) + "ay"
+            }
+        )
+    }
 
     // Declare a String with an identifier firstLetter, initialized to a substring of
     // enteredWord starting at index 0 and ending at index 1. We'll use substring as normal
-    var firstLetter = enteredTerm?.substring(0,1)
 
     // If firstLetter is a vowel (note - this is five conditions using OR logic)
         //Set convertedTerm to enteredterm concatenated with "yay"
@@ -28,14 +42,17 @@ fun main() {
         // with a substring of enteredTerm from index 0 to index 1, concatenated with "ay"
     // TRANSLATED: When becomes a better control structure to use here
 
-    convertedTerm = when (firstLetter) {
-        "a", "e", "i", "o", "u" -> enteredTerm + "yay"
-        else -> enteredTerm?.substring(1) + enteredTerm?.substring(0, 1) + "ay"
-    }
+    // var words = arrayOf()
+
 
     // Print that the Pig Latin Version of the enteredTerm is your convertedTerm
 
-    println("The Pig Latin Version of $enteredTerm is $convertedTerm")
+    print("The Pig Latin Version of \"$enteredTerm\" is ")
+
+    for (word in convertedTerms) {
+        print ("$word ")
+    }
+
 
 
 
