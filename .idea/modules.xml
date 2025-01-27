@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/piglatinmaker-Dashhyphenminus.iml" filepath="$PROJECT_DIR$/piglatinmaker-Dashhyphenminus.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/piglatinmaker-Dashhyphenminus.iml" filepath="$PROJECT_DIR$/src/piglatinmaker-Dashhyphenminus.iml" />
     </modules>
   </component>
 </project>
